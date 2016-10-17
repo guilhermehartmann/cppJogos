@@ -17,5 +17,4 @@ void STDConsole::render()
         std::cout << line << std::endl;
     }
 
-    std::cout << mInputLine << std::endl;
 }

@@ -9,7 +9,7 @@
 // Console Class to be extended with the rendering functionality added from outside
 class Console {
 public:
-    typedef std::function<bool(std::vector<std::string>&)> command_t;
+    typedef std::function<bool(std::vector<std::string>&, std::vector<std::string>&)> command_t;
 
     bool run();
 

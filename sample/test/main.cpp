@@ -5,8 +5,8 @@
 int main() {
     STDConsole console;
 
-    console.addCommand("quit", [](auto){return false;});
-    console.addCommand("test", [](auto& res){ res.push_back("test"); return true;});
+    console.addCommand("quit", [](auto&,auto&){return false;});
+    console.addCommand("test", [](auto& res, auto& options){ res.push_back("test"); return true;});
 
     while (console.pool())
     {

@@ -28,7 +28,7 @@ bool Console::run() {
     auto cmd = mCommandMap[tokens[0]];
     if(cmd)
     {
-        return cmd (tokens);
+        return cmd (mHistory, tokens);
     }
     return true;
 }
