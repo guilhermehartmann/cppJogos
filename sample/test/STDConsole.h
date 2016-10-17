@@ -12,32 +12,11 @@
 class STDConsole : public Console {
 public:
     // Read Keyboard - no standard way to read key presses
-    bool pool()
-    {
-        std::getline (std::cin,mInputLine);
+    bool pool();
 
-        mHistory.push_back("> " + mInputLine);
-
-        if ( mInputLine == "quit" )
-        {
-            return false;
-        }
-
-        return true;
-    }
 
     // Implement the renderer
-    void render()
-    {
-        std::cout << "-------------------------" << std::endl;
-
-        for (auto& line : mHistory) {
-            std::cout << line << std::endl;
-        }
-
-        std::cout << mInputLine << std::endl;
-    }
-
+    void render();
 };
 
 #endif //SAMPLE_STDCONSOLE_H

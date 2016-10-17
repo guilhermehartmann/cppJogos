@@ -5,6 +5,8 @@
 int main() {
     STDConsole console;
 
+    console.addCommand("quit", [](auto){return false;});
+
     while (console.pool())
     {
         console.render();

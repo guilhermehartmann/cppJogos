@@ -10,6 +10,13 @@
 class Console {
 public:
 
+    bool run();
+
+    void addCommand(std::string command, std::function<bool(std::vector<std::string>&)> fun)
+    {
+        mCommandMap[command]  = fun;
+    }
+
 protected:
     std::vector<std::string> mHistory;
     std::string mInputLine;
