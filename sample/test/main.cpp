@@ -1,11 +1,15 @@
 #include <iostream>
 
-#include "../src/"
+#include "STDConsole.h"
 
 int main() {
+    STDConsole console;
 
+    while (console.pool())
+    {
+        console.render();
+    }
 
-
-    std::cout << "Hello, World!" << std::endl;
     return 0;
+
 }

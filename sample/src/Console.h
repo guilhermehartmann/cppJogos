@@ -3,14 +3,17 @@
 
 #include <string>
 #include <vector>
+#include <functional>
+#include <map>
 
 // Console Class to be extended with the rendering functionality added from outside
 class Console {
 public:
 
-private:
-    std::vector<std::string> history;
-    std::string console;
+protected:
+    std::vector<std::string> mHistory;
+    std::string mInputLine;
+    std::map<std::string,std::function<bool(std::vector<std::string>&)>> mCommandMap;
 };
 
 
