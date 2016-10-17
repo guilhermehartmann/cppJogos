@@ -9,18 +9,19 @@
 // Console Class to be extended with the rendering functionality added from outside
 class Console {
 public:
+    typedef std::function<bool(std::vector<std::string>&)> command_t;
 
     bool run();
 
-    void addCommand(std::string command, std::function<bool(std::vector<std::string>&)> fun)
+    void addCommand(std::string command, command_t fun)
     {
-        mCommandMap[command]  = fun;
+        mCommandMap[command] = fun;
     }
 
 protected:
     std::vector<std::string> mHistory;
     std::string mInputLine;
-    std::map<std::string,std::function<bool(std::vector<std::string>&)>> mCommandMap;
+    std::map<std::string, command_t> mCommandMap;
 };
 
 
